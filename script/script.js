@@ -39,10 +39,6 @@ const paises = [
 
 agregarMonitores();
 
-//Variables tabala
-let headTable = document.getElementById('headTabla');
-//Variable de bodyTabla
-
 
 //funcion para agregar listeners a los botones
 function agregarMonitores() {
@@ -74,11 +70,11 @@ function mostrarPaises() {
                 <td>${paisesTod.moneda}</td>
                 </tr>
             </tbody>
-            
-                <section class="container-fluid">
+            <tfoot>
+                <section class"text-center">
                 <img src="${paisesTod.bandera}" alt="" class"text-center">
                 </section>
-           
+            </tfoot>
             `;  
         })
    document.getElementById('tablaGen').innerHTML = bodyTabla;
@@ -86,4 +82,22 @@ function mostrarPaises() {
 
 //funcion que permite agregar un pais al arreglo
 function agregarPais() {
+    let promtNombre = prompt('Agregar Nombre del país');
+    let promtCapital = prompt('Agregar capital del país');
+    let promtIdioma = prompt('Agregar Idioma del país');
+    let promptMoneda = prompt('Agregar aquí la moneda');
+    let promptImg = prompt('Agragar una imagen');
+    let todosLosPaises = promtNombre + promtCapital + promtIdioma + promptMoneda;
+    if(todosLosPaises == ""){ 
+          
+    }else{
+        paises.unshift({
+            nombre: promtNombre,
+            capital: promtCapital,
+            idioma_oficial: promtIdioma,
+            moneda: promptMoneda,
+            bandera: promptImg
+        })
+    }
+    mostrarPaises()
 }
