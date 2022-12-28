@@ -37,14 +37,17 @@ const paises = [
     }
 ];
 
-agregarMonitores();
 
+let btnMostrarPaises = document.getElementById('mostrarPaises');
+let btnAgregarPaises = document.getElementById('agregarPais');
 
 //funcion para agregar listeners a los botones
 function agregarMonitores() {
     //TODO
+    btnMostrarPaises.addEventListener("click", mostrarPaises);
+    btnAgregarPaises.addEventListener("click", agregarPais);
 }
-
+agregarMonitores();
 
 //funcion que mostrara las paises en la pagina
 function mostrarPaises() {
@@ -87,7 +90,7 @@ function agregarPais() {
     let promtIdioma = prompt('Agregar Idioma del país');
     let promptMoneda = prompt('Agregar aquí la moneda');
     let promptImg = prompt('Agragar una imagen');
-    let todosLosPaises = promtNombre + promtCapital + promtIdioma + promptMoneda;
+    let todosLosPaises = promtNombre + promtCapital + promtIdioma + promptMoneda + promptImg;
     if(todosLosPaises == ""){ 
           
     }else{
